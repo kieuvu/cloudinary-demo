@@ -42,6 +42,8 @@ app.post('/upload', upload.single('file'), (req, res) => {
   res.json({ fileUrl: req.file.path, publicId: req.file.filename });
 });
 
-app.listen(3001, () => {
-  console.log(`Server is running on http://localhost:${3001}`);
+const port = process.env.APP_PORT;
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
